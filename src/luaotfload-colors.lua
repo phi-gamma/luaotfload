@@ -340,7 +340,7 @@ add_color_callback = function ( )
                         "luaotfload.color_handler")
         add_to_callback("mlist_to_hlist",
                         function (head, display_type, need_penalties)
-                            if priority_in_callback("mlist_to_hlist","luaotfload.color_handler") == 1 then
+                            if luatexbase.callback_descriptions("mlist_to_hlist")[1] == "luaotfload.color_handler" then
                                 head = mlist_to_hlist(head, display_type, need_penalties)
                             end
                             if display_type == "text" then
